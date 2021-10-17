@@ -1,0 +1,101 @@
+\documentclass[a4paper]{ctexart}
+\usepackage{geometry}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{fancyhdr}
+\usepackage{zhlineskip}
+
+\geometry{centering,scale=0.8}
+\pagestyle{fancy}
+\chead{$202000300041$吕义春}
+\cfoot{\thepage}
+\edef\sum{\sum\limits}
+
+\begin{document} 
+\makebox[1em][l]{5.}
+$\displaystyle P(X=k)=\frac{3}{4}\cdot\left(\frac{1}{4}\right)^{k-1}\!\!,k=1,2,\dots$\par
+\smallskip
+\makebox[1em][l]{} $\displaystyle P(X=\text{偶数})=\frac{3}{4}\cdot\left[\left(\frac{1}{4}\right)
+^{2-1}\!\!\!\!+ \left(\frac{1}{4}\right)^{4-1}\!\!\!\!+ \left(\frac{1}{4}\right)^{6-1}\!\!\!\!
++ \cdots +\left(\frac{1}{4}\right)^{2n-1}\right]=\frac{1}{5}$，其中 $n$ 为正整数．
+
+\bigskip
+1\makebox[1em][l]{0.} $\displaystyle P(x\text{台设备发生故障})=0.01^x \cdot 0.99^{100-x}\cdot
+\text{C}_{100}^x$，显然 $X\sim B(100,0.01)$ \par
+\phantom{1}\makebox[1em][l]{} 设应至少配备 $y$ 个维修工，则 \par
+\[
+    \sum_{x = y + 1}^{100}\text{C}_{100}^x \cdot 0.01^x \cdot 0.99^{100-x} < 0.01
+\]
+
+\phantom{1}\makebox[1em][l]{} 可利用泊松定理近似，得 $\displaystyle \frac{\mathrm{e}^{-1}}{k!}
+<0.01$\par
+\smallskip
+\phantom{1}\makebox[1em][l]{} 查表可得，$k=4$．所以需至少配备 $4$ 个维修工．
+
+\bigskip
+1\makebox[1em][l]{5.} 因为 $f(1+x) = f(1-x)$，所以 $f(x)$ 关于 $x=1$ 对称，所以 $P(x<0) =
+P(x>2)$ \par
+\smallskip
+\phantom{1}\makebox[1em][l]{} 因为 $\displaystyle int_{0}^{2} f(x) \mathrm{d}x = 0.6$，
+所以 $P(x<0)+P(x>2)=1-0.6=0.4$．\par
+\smallskip
+\phantom{1}\makebox[1em][l]{} 所以 $P(x<0)=0.2$．
+
+\bigskip
+2\makebox[1em][l]{0.} $(1) $由题目可得：
+\[
+    F(X) = \begin{dcases}
+        1-\mathrm{e}^{-0.1X}, & x > 0; \\
+        0, & x \leqslant  0.
+    \end{dcases}
+\]
+
+\phantom{2(1) }\makebox[1em][l]{} 将 $X=10$ 代入，得 $\displaystyle F(10)=1-\frac{1}
+{\mathrm{e}}\approx 0.632$．\par\smallskip
+\phantom{2(1) }\makebox[1em][l]{} $1-F(10)=0.368$，所以超过 $10$ min 的概率为 $0.368$．
+
+\medskip
+\phantom{2}\makebox[1em][l]{} $(2) \,\ \displaystyle F(20)=1-\frac{1}{\mathrm{e}^2}\approx
+0.865$ ，所以 $F(20)-F(10)=0.233$．\par\smallskip
+\phantom{2(2) }\makebox[1em][l]{} 等待的时间在 10 min 到 20 min 之间的概率为 0.233．
+
+\bigskip
+2\makebox[1em][l]{5.} 由题目可得：
+\[
+    \begin{split}
+        P(\left\lvert X \right\rvert > 19.6) &= 1-\left[\varPhi\left(\frac{19.6-0}
+        {10}\right) - \varPhi\left(\frac{-19.6-0}{10}\right)\right] \\
+        &= 1- \left\{\varPhi\left(1.96\right) - \left[1-\varPhi\left(1.96\right)\right]\right\} \\
+        &= 2-2\varPhi\left(1.96\right)
+    \end{split}
+\]
+\indent\phantom{2}\makebox[1em][l]{} 所求概率为 $\sum_{n = 3}^{100}
+\mathrm{C}_{100}^n(0.05)^n(1-0.05)^{100-n}$，即 $n \sim B(100,0.05)$．\par
+\phantom{2}\makebox[1em][l]{} 利用泊松定理近似得：$\sum_{n = 3}^{100}\displaystyle
+\frac{5^n}{n!}\mathrm{e}^{-5}$，查表可得：$\sum_{n = 3}^{100}\displaystyle\frac{5^n}{n!}
+\mathrm{e}^{-5} \approx 0.875$．\par
+\phantom{2}\makebox[1em][l]{} 所以所求概率为 0.875．
+
+\bigskip
+3\makebox[1em][l]{0.} $X$ 的分布函数为：
+\[
+    F_X(x)=\begin{dcases}
+        0,&x<0,\\
+        \frac{x}{6},&0 \leqslant x \leqslant 6, \\
+        1,&x>6.
+    \end{dcases}
+\]
+\indent\phantom{2}\makebox[1em][l]{} $Y$ 的分布函数为：
+\[
+    F_Y(y)=P(|x-3|\leqslant y)=P(-y+3\leqslant x\leqslant y+3)=
+    \begin{dcases}
+        0,&y<0,\\
+        \frac{y}{3},&0\leqslant y\leqslant 3,\\
+        1,&y>3.
+    \end{dcases}
+\]
+\indent\phantom{2}\makebox[1em][l]{} 所以 $\displaystyle f_Y(y)=\begin{dcases}
+    \frac{1}{3},&0\leqslant y\leqslant 3,\\
+    0,&\text{其它}.
+\end{dcases}$
+\end{document}
